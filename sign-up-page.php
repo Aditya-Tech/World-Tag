@@ -1,28 +1,18 @@
 <?php
+    $link = mysqli_connect("79.170.40.178", "cl18-users-0sd", "4-xB7MdFy", "cl18-users-0sd");
 
+    if (mysqli_connect_error()) {
+        die ("There was an error connecting to the database.");
+    }
 
+    $first_name = mysqli_real_escape_string($link, $_POST['firstname']);
+    $last_name = mysqli_real_escape_string($link, $_POST['lastname']);
+    $email_address = mysqli_real_escape_string($link, $_POST['email']);
+    $username = mysqli_real_escape_string($link, $_POST['username']);
 
+    $query = "INSERT INTO users (firstName, lastName, email, id, points) VALUES ('$first_name', '$last_name', '$email_address', '$username', 0)";
+
+    mysqli_query($link, $query);
 
 ?>
 
-
-
-<form id='register' action='register.php' method='post'
-    accept-charset='UTF-8'>
-<fieldset >
-<legend>Register</legend>
-<input type='hidden' name='submitted' id='submitted' value='1'/>
-<label for='name' >Your Full Name*: </label>
-<input type='text' name='name' id='name' maxlength="50" />
-<label for='email' >Email Address*:</label>
-<input type='text' name='email' id='email' maxlength="50" />
- 
-<label for='username' >UserName*:</label>
-<input type='text' name='username' id='username' maxlength="50" />
- 
-<label for='password' >Password*:</label>
-<input type='password' name='password' id='password' maxlength="50" />
-<input type='submit' name='Submit' value='Submit' />
- 
-</fieldset>
-</form>
