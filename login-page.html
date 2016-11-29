@@ -1,0 +1,68 @@
+<html>
+
+    <head>
+
+        <style>
+
+            html, body {
+                color: white;
+                height: 100%;
+            }
+
+            html {
+                display: table;
+                margin: auto;
+                background: url(earthbg.jpg) no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+            body {
+                display: table-cell;
+                vertical-align: middle;
+            }
+            
+            #new-account {
+                text-align: center;
+            }
+            
+            #sign-in {
+                left: 50%
+            }
+            
+            button {
+                position: absolute;
+                top: 60%
+            }
+            
+        </style>
+        
+        
+    </head>
+    
+    
+    <body>
+            
+        <h1>Welcome back!</h1>
+        <form action="session.php" method="post">
+            <p>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+            </p>
+            <p>
+                <label for="password">Password:</label>
+                <input type="text" name="password" id="password">
+            </p>
+            <input type="submit" value="Login">
+        </form>
+    
+    
+    
+    
+    
+    </body>
+    
+    
+</html>

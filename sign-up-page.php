@@ -5,12 +5,14 @@
         die ("There was an error connecting to the database.");
     }
 
+
     $first_name = mysqli_real_escape_string($link, $_POST['firstname']);
     $last_name = mysqli_real_escape_string($link, $_POST['lastname']);
     $email_address = mysqli_real_escape_string($link, $_POST['email']);
     $username = mysqli_real_escape_string($link, $_POST['username']);
+    $password = mysqli_real_escape_string($link, $_POST['password']);
 
-    $query = "INSERT INTO users (firstName, lastName, email, id, points) VALUES ('$first_name', '$last_name', '$email_address', '$username', 0)";
+    $query = "INSERT INTO users (firstName, lastName, email, username, password, points) VALUES ('$first_name', '$last_name', '$email_address', '$username', '$password', 50)";
 
     mysqli_query($link, $query);
 
